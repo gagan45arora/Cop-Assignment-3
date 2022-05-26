@@ -18,13 +18,13 @@ for i in range (0,11):
 print(l)
 test = stats.chi2.cdf(l,10.0)
 print(test)
-if ((test<=1 and test>=0.95) or (test>0 and test<0.05)):
+if ((test<=1 and test>=0.99) or (test>=0 and test<0.01)):
     print("Not sufficiently random")
-elif (test<=0.4 and test>=0.6):
-    print("Sufficiently random")
-elif((test>0.05 and test<0.4) or (test>0.6 and test<0.95)):
-    print("almost suspect") #whne the imposter is sus-amogus
-elif((test>0.05 and test<0.4) or (test>0.6 and test<0.95)):
-    print("almost suspect") #sus-amogus season-2
+elif (test<=0.05 or test>=0.95):
+    print("Suspect") #whne the imposter is sus-amogus
+elif(test<=0.1 or test>=0.9):
+    print("almost suspect") #sus-amogus season-2 
+elif(test>0.1 and test<0.9):
+    print("Sufficiently random") 
 else:
     print("Error")
